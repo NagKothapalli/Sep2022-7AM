@@ -1,8 +1,8 @@
-package inheritanceByExtends;
+package simpleInheritance;
 
 import org.junit.Test;
 //            Child               parent
-public class TestCases extends ReusableComponents
+public class TestCases  extends ReusableComponents
 {
 	//***********************Test Cases ****************************
 	@Test
