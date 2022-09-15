@@ -1,14 +1,19 @@
-package multilevelInheritance;
+package inheritanceByObject;
 
 import org.junit.Test;
 
 public class ReusableComponents 
 {
+	public ReusableComponents()
+	{
+		System.out.println("Clear the Temp Records in the DataBase");
+		System.out.println("Open a Browser");
+	}
 
 	//************Reusable Components ********************************
 	public void launchApplication()
 	{
-		System.out.println("RC : Launch Application from RC");
+		System.out.println("RC : Launch Application");
 		//launch application code
 		//open browser
 		//maximize

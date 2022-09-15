@@ -4,6 +4,10 @@ import org.junit.Test;
 //            Child               parent
 public class TestCases  extends ReusableComponents
 {
+	/*
+	 * public void launchApplication() {
+	 * System.out.println("RC : Launch Application from TC"); }
+	 */
 	//***********************Test Cases ****************************
 	@Test
 	public void composeAndSendAnMail()
