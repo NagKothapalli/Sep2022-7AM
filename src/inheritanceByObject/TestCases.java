@@ -4,9 +4,16 @@ import org.junit.Test;
 //            Child               parent
 public class TestCases // extends ReusableComponents
 {
+	public   ReusableComponents        rc;
+	public TestCases()
+	{
+		System.out.println("I am inside TestCases class constructor");
+		rc      = new ReusableComponents("edge");
+	}
 	//Modifier ClassName                objName  = new Constructor();
-	  public   ReusableComponents        rc      = new ReusableComponents(); //Default constructor
+	 // public   ReusableComponents        rc      = new ReusableComponents(); //Default constructor
 	  
+	 
 	//***********************Test Cases ****************************
 	@Test
 	public void composeAndSendAnMail()

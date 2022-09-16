@@ -2,12 +2,18 @@ package inheritanceByObject;
 
 import org.junit.Test;
 
-public class ReusableComponents 
+public class ReusableComponents //Ice Cream shop
 {
 	public ReusableComponents()
 	{
 		System.out.println("Clear the Temp Records in the DataBase");
-		System.out.println("Open a Browser");
+		System.out.println("Open Google Chrome as Default Browser"); //By default butterscotch
+	}
+	
+	public ReusableComponents(String browser) //constructor overloading
+	{
+		System.out.println("Clear the Temp Records in the DataBase");
+		System.out.println("Open Browser of user choice :" + browser); //we have to write the code with if conditions to open the required browser
 	}
 
 	//************Reusable Components ********************************
