@@ -1,5 +1,7 @@
 package basicConcepts;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 public class MyArrays {
@@ -93,6 +95,42 @@ public class MyArrays {
 	}
 	
 	//ArrayList - Object of class
+	@Test
+	public void arrayList_integer()
+	{
+		//ArrayList  mylist = new ArrayList();
+		ArrayList<Integer>  mylist = new ArrayList<Integer>();
+		ArrayList<String>  mylist2 = new ArrayList<String>();
+		ArrayList<Boolean>  mylist3 = new ArrayList<Boolean>();
+		ArrayList<Character>  mylist4 = new ArrayList<Character>();
+		int len = mylist.size();
+		System.out.println("Length of the arraylist:" + len);
+		mylist.add(22);
+		mylist.add(44);
+		mylist.add(55);
+		mylist.add(24);
+		mylist.add(447);
+		mylist.add(575);
+		len = mylist.size();
+		System.out.println("Length of the arraylist after:" + len);
+		int a = mylist.get(0);
+		for(int i=0;i<len;i++) {
+			int val = mylist.get(i);
+			System.out.println("elements in the list :"+ val);
+		}
+		mylist.add(2, 34);
+		System.out.println("Length of the arraylist after insertion:" + mylist.size());
+		for(int i=0;i<mylist.size();i++) {
+			int val = mylist.get(i);
+			System.out.println("elements in the list after isertion :"+ val);
+		}
+		mylist.remove(1);
+		System.out.println("Length of the arraylist after remove:" + mylist.size());
+		for(int i=0;i<mylist.size();i++) {
+			int val = mylist.get(i);
+			System.out.println("elements in the list after remove :"+ val);
+		}
+	}
 	
 	//https://github.com/NagKothapalli/May2022-7PM-Maven.git
 	//https://github.com/NagKothapalli/Sep2022-7AM.git
