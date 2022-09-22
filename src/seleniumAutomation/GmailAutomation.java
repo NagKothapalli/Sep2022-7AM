@@ -1,6 +1,8 @@
 package seleniumAutomation;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import junit.framework.Assert;
@@ -37,7 +39,14 @@ public class GmailAutomation {
 		}
 		//Assert myassert = new Assert();		
 		Assert.assertEquals("My Title Validation is Failed", expectedTitle, actualTitle);
+		driver.findElement(By.name("identifier")).sendKeys("nag022");
+		
+		/*
+		 * WebElement email = driver.findElement(By.name("identifier")); email.click();
+		 * email.sendKeys("dfdfdsfsdfsdds"); email.clear(); email.sendKeys("nag022");
+		 */
 	}
+	
 	public void loginToApplication()
 	{
 		//How to Enter my username  - Object Identification
