@@ -67,7 +67,9 @@ public class GmailAutomation {
 	{
 		launchApplication();
 		//How to Enter my username  - Object Identification
-		driver.findElement(By.name("identifier")).sendKeys("nag022");
+		//driver.findElement(By.name("identifier")).sendKeys("nag022");
+		//driver.findElement(By.id("identifierId")).sendKeys("nag022");
+		driver.findElement(By.xpath("//input[@name='identifier'  or @id='identifierId']")).sendKeys("nag022");
 		List<WebElement> elements = driver.findElements(By.className("VfPpkd-vQzf8d"));
 		WebElement element = elements.get(1);
 		element.click();
@@ -85,27 +87,47 @@ public class GmailAutomation {
 	public void createAccount_getText()
 	{
 		launchApplication();
-		List<WebElement> elements = driver.findElements(By.className("VfPpkd-vQzf8d"));
-		//Create account
-		for(int i=0;i<elements.size();i++)
-		{
-			String mytext = elements.get(i).getText();
-			System.out.println("Text of element :" + mytext);
-			if(mytext.equals("Create account"))
-			{
-				elements.get(i).click();
-				break;
-			}
-		}
+		/*
+		 * List<WebElement> elements =
+		 * driver.findElements(By.className("VfPpkd-vQzf8d")); //Create account for(int
+		 * i=0;i<elements.size();i++) { String mytext = elements.get(i).getText();
+		 * System.out.println("Text of element :" + mytext);
+		 * if(mytext.equals("Create account")) { elements.get(i).click(); break; } }
+		 */
+		//driver.findElement(By.xpath("//span[text()='Create account']")).click();
+		driver.findElement(By.xpath("//span[@class='VfPpkd-vQzf8d'  and text()='Create account']")).click();
 	}
+	//XPATH : Absolute xpath  /  Static xpath / fixed static 
+	// /html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/button
+	//Relative xpath : like SQL select query  - select Salary from Emp where EmpName='Ram'
+	
+	//tagName[@attribute=value]   ->  Ex : //button[@jsname='Cuz2Ue']
+	//tagName[text()='value']     ->  Ex : //span[text()='Create account']
+	
+	//*[@attribute=value]   ->  Ex : //*[@jsname='Cuz2Ue']
+	//*[text()='value']     ->  Ex : //*[text()='Create account']
+	
+	//tagName[contains(@attribute,value)]   ->  Ex : //button[contains(@jsname,'Cuz2Ue')]
+	//tagName[contains(text(),'value')]     ->  Ex : //span[contains(text(),'Create')]
+	
+	//tagName[@attribute1='value'  and @attribute2='value']   -> Ex : //span[@class='VfPpkd-vQzf8d'  and @jsname='Cuz2Ue']
+	//tagName[@attribute1='value'  and text()='value']   -> Ex : //span[@class='VfPpkd-vQzf8d'  and text()='Create account']
+	
+	//tagName[@attribute1='value'  or  @attribute2='value']   -> Ex : //input[@name='identifier'  or @id='identifierId']
+	//tagName[@attribute1='value'  or  text()='value']   -> Ex : 
+	
+	//relative xpath with parent child relationship
+	
 	@Test
 	public void forgotEmail()
 	{
 		launchApplication();
 		//driver.findElement(By.tagName("button")).click();
-		List<WebElement> elements = driver.findElements(By.tagName("button"));
-		WebElement element = elements.get(0);  //0 1 2
-		element.click();
+		//List<WebElement> elements = driver.findElements(By.tagName("button"));
+		//WebElement element = elements.get(0);  //0 1 2
+		//element.click();
+		//driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[3]/button")).click();
+		driver.findElement(By.xpath("//button[@jsname='Cuz2Ue']")).click();
 	}
 	@Test
 	public void learnMore()
@@ -121,16 +143,12 @@ public class GmailAutomation {
 	{
 		launchApplication();
 		//driver.findElement(By.tagName("button")).click();
-		List<WebElement> elements = driver.findElements(By.tagName("a"));
-		for(int i=0;i<elements.size();i++)
-		{
-			String mytext = elements.get(i).getText();
-			if(mytext.equals("Learn more"))
-			{
-				elements.get(i).click();
-				break;
-			}
-		}
+		/*
+		 * List<WebElement> elements = driver.findElements(By.tagName("a")); for(int
+		 * i=0;i<elements.size();i++) { String mytext = elements.get(i).getText();
+		 * if(mytext.equals("Learn more")) { elements.get(i).click(); break; } }
+		 */
+		driver.findElement(By.xpath("//a[text()='Learn more']")).click();
 	}
 	
 	@Test
